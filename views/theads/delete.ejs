@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theads</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <a href="/theads" class="btn btn-info text-white my-4">กลับ</a>
+        <table class="table table-striped table-hover ">
+            <p>รีวิวทั้งหมด <%= data.length %> รีวิว</p>
+            
+            <% for(let i = 0;i< data.length;i++) {%>
+            <tr>
+                <td>
+                    <div class="row">
+                        <div class="col-2"><img src="<%=data[i].image%>" class="w-100" alt=""></div>
+                        <div class="col-10"><h2><%=data[i].topic%></h2>
+                        <p><%=data[i].detail%></p>
+                        <a href="/theads/watch/<%=data[i].id%>" class="btn btn-info text-white">เข้าชม</a>
+                        <a href="/theads/delete/<%=data[i].id%>" class="btn btn-danger text-white">ลบ</a>
+                        </div>
+                        
+                    </div>
+
+                </td>
+            </tr>
+            <% }%>
+          </table>
+      </div>
+</body>
+</html>
